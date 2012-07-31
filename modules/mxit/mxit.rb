@@ -1,6 +1,9 @@
 require 'cgi'
 
+# Class to parse a request object and extract mxit data
 class Mxit
+    # To  make testing locally easier, mock data can be added here. Real mxit data will
+    # override this mock data when the app is tested through mxit app
     @@mock_mxit_headers = {
         "HTTP_X_MXIT_LOCATION"=>"ZA,,06,,,Germiston,83354,81131486,7efb4d", 
         "HTTP_X_MXIT_LOGIN"=>"tobykurien", 
