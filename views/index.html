@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    Check out what's happening in {{ mxit.province_name }}, {{ mxit.nickname }}:
+    <br/>
+    <ol> 
+    {% for event in events %}
+        <li> <a href="{{ root }}event_details/{{ event.uri }}">{{ event.name }}</a> </li>
+    {% endfor %}
+    </ol>
+    {% if mxit.message %}
+     {{ mxit.message }}? Really??
+    {% endif %}
+{% endblock %}
+
+{% block footer_nav %}
+    <li> <a href="mxit://[tradepost]/" type="mxit/service-navigation">Go to Tradepost</a> </li>
+{% endblock %}
